@@ -6,7 +6,7 @@
 > 超级简单好看的音乐播放器
 
 
-
+## [DEMO](http://www.tianhao.site/M-thplayer/index.html) ##
 
 ## ScreenShot ##
 

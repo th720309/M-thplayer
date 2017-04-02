@@ -6,16 +6,18 @@
     <title>Thplayer</title>
     <link href="css/thplayer.css" rel="stylesheet">
     <script type="application/javascript" src="http://oct3pmpde.bkt.clouddn.com/jquery.js"></script>
-    <script type="application/javascript" src="thplayer.js"></script>
+    <script type="application/javascript" src="js/thplayer.js"></script>
+    <script type="application/javascript" src="js/thcloud.js"></script>
+    <script type="application/javascript" src="js/jquery.marquee.min.js"></script>
 </head>
 <body>
 <div id="Thplayer">
     <div id="player-demo">
-        <img src="http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg">
+        <img id="player-album" src="http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg">
         <div id="player-mask"></div>
         <div id="play" class="bg play-bg" data-action="play"></div>
         <div id="pause" class="bg pause-bg" data-action="pause"></div>
-        <div id="player-info">
+        <div class="player-info">
             <strong class="title"></strong>
             <span class="and"> - </span>
             <span class="author"></span>
@@ -25,27 +27,42 @@
             <span class="and">/</span>
             <span class="right-time">3:45</span>
         </div>
-        <div id="player-menu">
-            <div id="playmode">
+        <div class="player-listbox">
+            <div style="width:100%; text-align:center; position:relative;">
+                <input type="text"  id="txtSong" placeholder="请输入歌曲名称，例如：好久不见 陈奕迅..." />
+                <img src="./img/search.png" id="btnSearch" />
             </div>
+            <table class="th-list-table">
+                <thead style=" display: block;height: 30px;">
+                <tr style=" display: block;padding: 0 20px;color: #999999;">
+                    <th style="padding-right: 160px;">歌名</th>
+                    <th>歌手</th>
+                </tr>
+                </thead>
+                <tbody id="UserList" style="display: block;height: 280px;width:330px;overflow: auto;margin-top: 10px;"></tbody>
+                <tr id="LoadMore" style="display:none;cursor: pointer;text-align: center;font-size: 10px;color: #565454;" offset="0" search="0">
+                    <td colspan="8"></td>
+                </tr>
+            </table>
         </div>
-        <div id="player-lyric">
-
-        </div>
+        <div id="player-list-icon"></div>
         <div id="player-process">
-            <hr/>
+            <div id="player-current"></div>
             <span></span>
         </div>
+    </div>
+    <div id="player-flex">
+        <span id="player-show"></span>
     </div>
     <audio id="audio"  loop="loop"></audio>
 </div>
 
 <script>
     $("#Thplayer").thplayer({
-/*        title: "因为爱所以爱",
+        title: "因为爱所以爱",
         author: "谢霆锋",
         cover: "http://p3.music.126.net/fmnoVwth7L4SojzwmYUkHw==/691592813882957.jpg",
-        music: "http://p2.music.126.net/hXWOiIMjCjSrkknWpqRX1w==/1200666697537999.mp3"*/
+        music: "http://p2.music.126.net/hXWOiIMjCjSrkknWpqRX1w==/1200666697537999.mp3"
     });
 </script>
 

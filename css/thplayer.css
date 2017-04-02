@@ -1,15 +1,18 @@
 #Thplayer{
-    position: relative;
+    position: fixed;
+    bottom: 100px;
+    left: -330px;
     display: inline-block;
     width: 350px;
     height: 100px;
-    overflow: hidden;
     background: rgb(255,255,255);
     box-sizing: border-box;
     border: 1px solid #eee;
     box-shadow: 1px 1px 2px #ccc;
+    z-index: 999;
+    transition: left .5s;
 }
-#player-demo img{
+#player-album{
     width: 80px;
     height: 80px;
     position: absolute;
@@ -62,18 +65,21 @@
 #Thplayer .pause-bg:hover {
     background-position: 0 -157px;
 }
-#player-info{
+.player-info{
     font-size: 90%;
     position: absolute;
+    width: 180px;
+    height: 20px;
+    overflow: hidden;
     left: 100px;
     top: 20px;
     color: #565454;
     font-family: "微软雅黑";
 }
-#player-info .title{
+.player-info .title{
     float: left;
 }
-#player-info .and{
+.player-info .and{
     margin: 0 5px;
 }
 #player-control{
@@ -102,11 +108,16 @@
     left: 100px;
     width: 200px;
     height: 2px;
-}
-#player-process hr{
-    display: block;
     margin-top:0;
     background: #6f6e79;
+}
+#player-current{
+    top: 80px;
+    left: 100px;
+    width: 100px;
+    height: 2px;
+    margin-top:0;
+    background: #ed0b0d;
 }
 #player-process span {
     position: absolute;
@@ -122,13 +133,84 @@
     background: #ffffff;
     cursor: pointer!important;
 }
-#player-lyric{
+#player-list-icon{
     position: absolute;
-    width: 200px;
-    height: 30px;
-    left: 180px;
-    top: 40px;
+    background: url(../img/audio_sprite.png) no-repeat 0 9999px;
+    background-position: -58px -14px !important;
+    width: 20px;
+    height: 14px;
+    left: 290px;
+    top: 22px;
+    cursor: pointer;
 }
-#player-lyric span{
-    padding: 2px;
+.player-listbox{
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 330px;
+    height: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    -webkit-transition: height .5s;
+    -moz-transition: height .5s;
+    -o-transition: height .5s;
+    transition: height .5s;
+}
+.player-listbox input{
+    outline: none;
+    width: 90%;
+    height: 25px;
+    margin-top: 20px;
+}
+#btnSearch {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 290px;
+    top: 25px;
+    cursor: pointer;
+}
+#UserList tr{
+    font-size: 12px;
+    padding: 0 10px;
+    display: inline-block;
+    height: 30px;
+    width: 93%;
+    color: #565454;
+}
+#UserList :hover{
+    background: #eee;
+    color: #565454;
+    font-weight: bold;
+    cursor: pointer;
+}
+#UserList::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+#UserList::-webkit-scrollbar-thumb {
+    background-color: #ed0b0d;
+}
+#UserList::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+.playerbox-show{
+    height: 400px;
+}
+#player-flex{
+    position: absolute;
+    left: 330px;
+    height: 100px;
+    top: 0px;
+    width: 20px;
+    background: #ed0b0d;
+    cursor: pointer;
+}
+#player-show{
+    width: 20px;
+    height: 20px;
+    top: 40px;
+    position: absolute;
+    background: transparent url(../img/2.png) repeat scroll 0% 0%;
 }

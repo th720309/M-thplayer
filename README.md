@@ -1,5 +1,6 @@
 ## M-thplayer ##
 
+![screenshot](https://img.shields.io/badge/M--thplayer-version2.0-red.svg)
 
 
 > 超级简单好看的浮窗音乐播放器，支持在线收听。

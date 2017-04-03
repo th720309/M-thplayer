@@ -65,7 +65,7 @@
 #Thplayer .pause-bg:hover {
     background-position: 0 -157px;
 }
-.player-info{
+#player-info{
     font-size: 90%;
     position: absolute;
     width: 180px;
@@ -76,10 +76,10 @@
     color: #565454;
     font-family: "微软雅黑";
 }
-.player-info .title{
+#player-info .title{
     float: left;
 }
-.player-info .and{
+#player-info .and{
     margin: 0 5px;
 }
 #player-control{

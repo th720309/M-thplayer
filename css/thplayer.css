@@ -179,9 +179,9 @@
     width: 93%;
     color: #565454;
 }
-#UserList :hover{
+#UserList tr:hover{
     background: #eee;
-    color: #565454;
+    color: #ed0b0d;
     font-weight: bold;
     cursor: pointer;
 }

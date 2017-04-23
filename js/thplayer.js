@@ -100,7 +100,7 @@
                  * */
                 var Song = $("#txtSong").val();
                 $.ajax({
-                    url: "http://fm.aakuan.cn/GetMusic.ashx",
+                    url: "https://fm.aakuan.cn/GetMusic.ashx",
                     data: {SongName: Song, OffSet: $("#LoadMore").attr("offset")},
                     type: "get",
                     success: function (msg) {
